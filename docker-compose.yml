@@ -3,6 +3,6 @@ services:
   origini:
     image: tiangolo/uvicorn-gunicorn:python3.7
     ports:
-      - 80:88
+      - 88:80
     volumes:
       - ./app:/app

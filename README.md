@@ -63,11 +63,11 @@ http:/localhost/items/5?q=somequery
     docker-compose -f docker-compose.yml up
 
 
-## Deploy
+## Clone
 git clone https://github.com/origini/api.git origini-api
 cd origini-api
 
-
+## Deploy
 export DOMAIN=api.origini.vodapp.com
 export NODE_ID=$(docker info -f '{{.Swarm.NodeID}}')
 docker node update --label-add origini.api-data=true $NODE_ID

@@ -45,6 +45,7 @@ https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
 
 
 
+
 http:/localhost/docs
 http:/localhost/redoc
 http:/localhost/items/5?q=somequery
@@ -60,3 +61,17 @@ http:/localhost/items/5?q=somequery
 
     :: docker build -t  origini-api_front:latest
     docker-compose -f docker-compose.yml up
+
+
+## Deploy
+git clone https://github.com/origini/api.git origini-api
+cd origini-api
+
+
+export DOMAIN=api.origini.vodapp.com
+export NODE_ID=$(docker info -f '{{.Swarm.NodeID}}')
+docker node update --label-add origini.api-data=true $NODE_ID
+docker stack deploy -c docker-compose.yml origini
+docker stack ps origini
+docker service logs origini_api
+

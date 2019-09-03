@@ -1,7 +1,6 @@
 version: "3.2"
 services:
-  front:
-    container_name: origini
+  api:
     build: .
     restart: on-failure
     ports:

@@ -41,3 +41,22 @@ https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
     image.bat
     container.bat
     browser.bat
+
+
+
+
+http:/localhost/docs
+http:/localhost/redoc
+http:/localhost/items/5?q=somequery
+
+
+## docker
+    .\apicra\docker\run.bat
+    .\apicra\docker\stop.bat
+    docker images -a
+    docker ps -a
+
+## docker - compose
+
+    :: docker build -t  origini-api_front:latest
+    docker-compose -f docker-compose.yml up

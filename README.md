@@ -64,13 +64,15 @@ http:/localhost/items/5?q=somequery
 
 
 ## Clone
-git clone https://github.com/origini/api.git origini-api
-cd origini-api
+    git clone https://github.com/origini/api.git origini-api
+    cd origini-api
 
 ## Deploy
-export DOMAIN=api.origini.vodapp.com
-export NODE_ID=$(docker info -f '{{.Swarm.NodeID}}')
-docker node update --label-add origini.api-data=true $NODE_ID
-docker stack deploy -c docker-compose.yml origini_origini
-docker stack ps origini_origini
-docker service logs origini_origini_origini
+    deploy.sh
+    
+http://api.origini.vodapp.com:88/
+http://api.origini.vodapp.com:88/docs
+http://api.origini.vodapp.com:88/redoc
+http://api.origini.vodapp.com:88/items/5?q=somequery
+
+

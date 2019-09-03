@@ -1,0 +1,1 @@
+-apicra-remove.bat && -apicra-install-by-git.bat
